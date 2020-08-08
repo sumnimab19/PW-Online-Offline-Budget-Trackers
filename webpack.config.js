@@ -7,9 +7,9 @@ const config = {
   },
   output: {
     path: __dirname + "/dist",
-    filename: "[name].bundle.js"
+    filename: "bundle.js"
   },
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
@@ -26,6 +26,8 @@ const config = {
   },
   plugins: [
     new WebpackPwaManifest({
+      inject: false,
+
       name: "Budget app",
       short_name: "Budget",
       description: "An application that allows you to track your budget.",
