@@ -6,7 +6,7 @@ const config = {
     app: "./public/index.js"
   },
   output: {
-    path: __dirname + "/dist",
+    path: __dirname + "/public/dist",
     filename: "bundle.js"
   },
   mode: "production",
@@ -26,7 +26,10 @@ const config = {
   },
   plugins: [
     new WebpackPwaManifest({
+
+      filename:"manifest.json",
       inject: false,
+      fingerprints:false,
 
       name: "Budget app",
       short_name: "Budget",
